@@ -1,50 +1,32 @@
 body{
-font-family: Arial, sans-serif;
-background:#f4f6f9;
+font-family: Arial;
 text-align:center;
-margin:0;
-padding:0;
+background:#f4f4f4;
 }
 
 h1{
-background:#2c3e50;
-color:white;
-padding:20px;
-margin:0;
+margin-top:30px;
 }
 
-p{
-color:#555;
+.tools-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+padding:40px;
 }
 
-.tools{
-margin:20px;
+.tool-card{
+background:white;
+padding:25px;
+border-radius:10px;
+text-decoration:none;
+color:black;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.2s;
 }
 
-button{
-padding:12px 20px;
-margin:10px;
-font-size:16px;
-border:none;
-border-radius:5px;
-background:#3498db;
-color:white;
-cursor:pointer;
+.tool-card:hover{
+transform:scale(1.05);
+background:#e8f0ff;
 }
-
-button:hover{
-background:#2980b9;
-}
-
-input{
-padding:10px;
-margin:5px;
-font-size:16px;
-border-radius:5px;
-border:1px solid #ccc;
-}
-
-hr{
-margin:40px;
-}
-
