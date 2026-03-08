@@ -1,23 +1,49 @@
 body{
-font-family: Arial;
+font-family: Arial, sans-serif;
+background:#f4f6f9;
 text-align:center;
-margin-top:100px;
-background-color:#f2f2f2;
+margin:0;
+padding:0;
+}
+
+h1{
+background:#2c3e50;
+color:white;
+padding:20px;
+margin:0;
+}
+
+p{
+color:#555;
+}
+
+.tools{
+margin:20px;
+}
+
+button{
+padding:12px 20px;
+margin:10px;
+font-size:16px;
+border:none;
+border-radius:5px;
+background:#3498db;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#2980b9;
 }
 
 input{
 padding:10px;
+margin:5px;
 font-size:16px;
+border-radius:5px;
+border:1px solid #ccc;
 }
 
-button{
-padding:10px 20px;
-font-size:16px;
-background-color:blue;
-color:white;
-border:none;
-}
-
-button:hover{
-background-color:darkblue;
+hr{
+margin:40px;
 }
