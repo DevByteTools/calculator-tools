@@ -2,27 +2,31 @@
 <html>
 
 <head>
-<title>BMI Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>BMI Calculator | DevByte Tools</title>
+  <meta name="description" content="Check your Body Mass Index (BMI) using DevByte Tools BMI Calculator. Enter your weight and height to get instant results.">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>BMI Calculator</h1>
+<header>
+  <h1>BMI Calculator</h1>
+  <p>Enter your weight and height to calculate BMI</p>
+</header>
 
-<input type="number" id="weight" placeholder="Weight (kg)">
-<input type="number" id="height" placeholder="Height (m)">
+<div class="calculator-container">
+  <div class="calculator-card">
+    <input type="number" id="weight" placeholder="Weight (kg)" />
+    <input type="number" id="height" placeholder="Height (cm)" />
+    <button onclick="calculateBMI()">Calculate</button>
+    <p id="bmiresult"></p>
+  </div>
+</div>
 
-<button onclick="calculateBMI()">Calculate</button>
-
-<p id="bmiresult"></p>
-
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+<a class="back-home" href="index.html">← Back to Home</a>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

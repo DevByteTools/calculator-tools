@@ -2,26 +2,283 @@
 <html>
 
 <head>
-<title>Age Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>Age Calculator Online | DevByte Tools</title>
+  <meta name="description" content="Use DevByte Tools Age Calculator to find your exact age in years, months, and days instantly. Free online calculator for everyone.">
+
+  <style>
+    /* General body */
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    /* Header */
+    header {
+      background: #1e293b;
+      color: white;
+      padding: 30px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #cbd5e1;
+    }
+
+    /* Calculator container */
+    .calculator-container {
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    /* Calculator card */
+    .calculator-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Inputs */
+    .calculator-card input {
+      width: 100%;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    /* Buttons */
+    .calculator-card button {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: 0.2s;
+    }
+
+    .calculator-card button:hover {
+      background: #3730a3;
+    }
+
+    /* Result text */
+    .calculator-card p {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* Back link */
+    .back-home {
+      display: inline-block;
+      margin: 20px 0 40px;
+      text-decoration: none;
+      color: #4f46e5;
+      font-weight: bold;
+    }
+
+    .back-home:hover {
+      text-decoration: underline;
+    }
+
+    /* Stats grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .stat-box {
+      background: #f0f4f8;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 16px 10px;
+      text-align: center;
+    }
+
+    .stat-box.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .stat-box .value {
+      display: block;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #4f46e5;
+    }
+
+    .stat-box.years .value {
+      font-size: 2.2rem;
+    }
+
+    .stat-box .unit {
+      display: block;
+      font-size: 0.75rem;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+
+    .live-badge {
+      display: inline-block;
+      background: #ede9fe;
+      color: #4f46e5;
+      font-size: 0.65rem;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 6px;
+      font-weight: bold;
+      animation: pulse 2s infinite;
+    }
+
+    .result-label {
+      margin-top: 24px;
+      font-size: 0.78rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* Responsive */
+    @media(max-width: 480px) {
+      .calculator-card {
+        padding: 30px 20px;
+      }
+
+      header h1 {
+        font-size: 26px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>Age Calculator</h1>
+<header>
+  <h1>Age Calculator</h1>
+  <p>Enter your birth date and find your age instantly</p>
+</header>
 
-<input type="number" id="birthyear" placeholder="Enter birth year">
+<div class="calculator-container">
+  <div class="calculator-card">
 
-<button onclick="calculateAge()">Calculate</button>
+    <input type="date" id="birthdate" />
 
-<p id="ageresult"></p>
+    <button onclick="calculateAge()">Calculate</button>
 
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+    <p id="ageresult" style="display:none;"></p>
 
-<script src="script.js"></script>
+    <div id="results" style="display:none;">
+      <div class="result-label">You have lived <span class="live-badge">LIVE</span></div>
+      <div class="stats-grid">
+        <div class="stat-box full-width years">
+          <span class="value" id="res-years">—</span>
+          <span class="unit">Years</span>
+        </div>
+        <div class="stat-box">
+          <span class="value" id="res-months">—</span>
+          <span class="unit">Months</span>
+        </div>
+        <div class="stat-box">
+          <span class="value" id="res-days">—</span>
+          <span class="unit">Days</span>
+        </div>
+        <div class="stat-box">
+          <span class="value" id="res-hours">—</span>
+          <span class="unit">Hours</span>
+        </div>
+        <div class="stat-box">
+          <span class="value" id="res-minutes">—</span>
+          <span class="unit">Minutes</span>
+        </div>
+        <div class="stat-box full-width">
+          <span class="value" id="res-seconds">—</span>
+          <span class="unit">Seconds</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<a class="back-home" href="index.html">← Back to Home</a>
+
+<script>
+  let liveTimer = null;
+  let birthTimestamp = null;
+
+  function calculateAge() {
+    const input = document.getElementById('birthdate').value;
+    if (!input) {
+      alert('Please enter your date of birth.');
+      return;
+    }
+
+    birthTimestamp = new Date(input).getTime();
+    if (isNaN(birthTimestamp) || birthTimestamp > Date.now()) {
+      alert('Please enter a valid past date.');
+      return;
+    }
+
+    document.getElementById('results').style.display = 'block';
+
+    if (liveTimer) clearInterval(liveTimer);
+    updateStats();
+    liveTimer = setInterval(updateStats, 1000);
+  }
+
+  function updateStats() {
+    const now = Date.now();
+    const diffMs = now - birthTimestamp;
+
+    const totalSeconds = Math.floor(diffMs / 1000);
+    const totalMinutes = Math.floor(totalSeconds / 60);
+    const totalHours   = Math.floor(totalMinutes / 60);
+    const totalDays    = Math.floor(totalHours / 24);
+
+    const birth = new Date(birthTimestamp);
+    const today = new Date(now);
+
+    let years  = today.getFullYear() - birth.getFullYear();
+    let months = today.getMonth() - birth.getMonth();
+    if (months < 0) { years--; months += 12; }
+    if (today.getDate() < birth.getDate()) { months--; if (months < 0) { years--; months += 11; } }
+
+    const totalMonths = years * 12 + months;
+
+    document.getElementById('res-years').textContent   = years.toLocaleString();
+    document.getElementById('res-months').textContent  = totalMonths.toLocaleString();
+    document.getElementById('res-days').textContent    = totalDays.toLocaleString();
+    document.getElementById('res-hours').textContent   = totalHours.toLocaleString();
+    document.getElementById('res-minutes').textContent = totalMinutes.toLocaleString();
+    document.getElementById('res-seconds').textContent = totalSeconds.toLocaleString();
+  }
+</script>
 
 </body>
-
 </html>

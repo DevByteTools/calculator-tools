@@ -2,28 +2,29 @@
 <html>
 
 <head>
-<title>Average Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>Average Calculator | DevByte Tools</title>
+  <meta name="description" content="Compute the average of numbers quickly.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Average Calculator</h1>
+<header>
+  <h1>Average Calculator</h1>
+  <p>Enter numbers separated by commas to calculate average</p>
+</header>
 
-<input type="text" id="numbers" placeholder="Enter numbers separated by commas">
+<div class="calculator-container">
+  <div class="calculator-card">
+    <input type="text" id="numbers" placeholder="Enter numbers separated by commas" />
+    <button onclick="calculateAverage()">Calculate</button>
+    <p id="averageresult"></p>
+  </div>
+</div>
 
-<br><br>
-
-<button onclick="calculateAverage()">Calculate</button>
-
-<p id="averageresult"></p>
-
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+<a class="back-home" href="index.html">← Back to Home</a>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

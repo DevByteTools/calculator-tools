@@ -2,33 +2,31 @@
 <html>
 
 <head>
-<title>Interest Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>Simple Interest Calculator | DevByte Tools</title>
+  <meta name="description" content="Calculate simple interest for loans or deposits instantly.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Simple Interest Calculator</h1>
+<header>
+  <h1>Simple Interest Calculator</h1>
+  <p>Enter principal, rate, and time to calculate interest</p>
+</header>
 
-<input type="number" id="principal" placeholder="Principal Amount">
-<br><br>
+<div class="calculator-container">
+  <div class="calculator-card">
+    <input type="number" id="principal" placeholder="Principal Amount" />
+    <input type="number" id="rate" placeholder="Interest Rate (%)" />
+    <input type="number" id="time" placeholder="Time (years)" />
+    <button onclick="calculateInterest()">Calculate</button>
+    <p id="interestresult"></p>
+  </div>
+</div>
 
-<input type="number" id="rate" placeholder="Interest Rate (%)">
-<br><br>
-
-<input type="number" id="time" placeholder="Time (years)">
-<br><br>
-
-<button onclick="calculateInterest()">Calculate</button>
-
-<p id="interestresult"></p>
-
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+<a class="back-home" href="index.html">← Back to Home</a>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

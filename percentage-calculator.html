@@ -2,27 +2,31 @@
 <html>
 
 <head>
-<title>Percentage Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>Percentage Calculator Online | DevByte Tools</title>
+  <meta name="description" content="Quickly calculate percentages online with DevByte Tools Percentage Calculator. Free and easy to use.">
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Percentage Calculator</h1>
+<header>
+  <h1>Percentage Calculator</h1>
+  <p>Enter value and total to calculate percentage instantly</p>
+</header>
 
-<input type="number" id="percent" placeholder="Enter percentage">
-<input type="number" id="number" placeholder="Enter number">
+<div class="calculator-container">
+  <div class="calculator-card">
+    <input type="number" id="value" placeholder="Value" />
+    <input type="number" id="total" placeholder="Total" />
+    <button onclick="calculatePercentage()">Calculate</button>
+    <p id="percentageresult"></p>
+  </div>
+</div>
 
-<button onclick="calculatePercentage()">Calculate</button>
-
-<p id="percentresult"></p>
-
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+<a class="back-home" href="index.html">← Back to Home</a>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

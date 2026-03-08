@@ -2,36 +2,31 @@
 <html>
 
 <head>
-<title>Loan EMI Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>Loan EMI Calculator | DevByte Tools</title>
+  <meta name="description" content="Calculate monthly EMI for any loan.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Loan EMI Calculator</h1>
+<header>
+  <h1>Loan EMI Calculator</h1>
+  <p>Enter loan amount, interest rate, and tenure to calculate EMI</p>
+</header>
 
-<input type="number" id="loanamount" placeholder="Loan Amount">
+<div class="calculator-container">
+  <div class="calculator-card">
+    <input type="number" id="loanamount" placeholder="Loan Amount" />
+    <input type="number" id="interestrate" placeholder="Interest Rate (%)" />
+    <input type="number" id="loanmonths" placeholder="Loan Tenure (months)" />
+    <button onclick="calculateEMI()">Calculate</button>
+    <p id="emiresult"></p>
+  </div>
+</div>
 
-<br><br>
-
-<input type="number" id="interestrate" placeholder="Interest Rate (%)">
-
-<br><br>
-
-<input type="number" id="loanmonths" placeholder="Loan Tenure (months)">
-
-<br><br>
-
-<button onclick="calculateEMI()">Calculate</button>
-
-<p id="emiresult"></p>
-
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+<a class="back-home" href="index.html">← Back to Home</a>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

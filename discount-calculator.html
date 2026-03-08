@@ -2,30 +2,30 @@
 <html>
 
 <head>
-<title>Discount Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>Discount Calculator | DevByte Tools</title>
+  <meta name="description" content="Find discounted prices instantly.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Discount Calculator</h1>
+<header>
+  <h1>Discount Calculator</h1>
+  <p>Enter original price and discount percentage</p>
+</header>
 
-<input type="number" id="price" placeholder="Original Price">
-<br><br>
+<div class="calculator-container">
+  <div class="calculator-card">
+    <input type="number" id="price" placeholder="Original Price" />
+    <input type="number" id="discount" placeholder="Discount %" />
+    <button onclick="calculateDiscount()">Calculate</button>
+    <p id="discountresult"></p>
+  </div>
+</div>
 
-<input type="number" id="discount" placeholder="Discount %">
-<br><br>
-
-<button onclick="calculateDiscount()">Calculate</button>
-
-<p id="discountresult"></p>
-
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+<a class="back-home" href="index.html">← Back to Home</a>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

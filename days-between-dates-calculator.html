@@ -2,36 +2,30 @@
 <html>
 
 <head>
-<title>Days Between Dates Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>Days Between Dates | DevByte Tools</title>
+  <meta name="description" content="Calculate the number of days between two dates.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Days Between Dates</h1>
+<header>
+  <h1>Days Between Dates</h1>
+  <p>Enter start and end date to find the total days</p>
+</header>
 
-<label>Start Date</label>
-<br>
-<input type="date" id="startdate">
+<div class="calculator-container">
+  <div class="calculator-card">
+    <input type="date" id="startdate" />
+    <input type="date" id="enddate" />
+    <button onclick="calculateDays()">Calculate</button>
+    <p id="daysresult"></p>
+  </div>
+</div>
 
-<br><br>
-
-<label>End Date</label>
-<br>
-<input type="date" id="enddate">
-
-<br><br>
-
-<button onclick="calculateDays()">Calculate</button>
-
-<p id="daysresult"></p>
-
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+<a class="back-home" href="index.html">← Back to Home</a>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

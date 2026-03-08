@@ -2,40 +2,30 @@
 <html>
 
 <head>
-<title>Time Difference Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>Time Difference Calculator | DevByte Tools</title>
+  <meta name="description" content="Find the time difference between any two countries using DevByte Tools.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Time Difference Between Countries</h1>
+<header>
+  <h1>Time Difference Calculator</h1>
+  <p>Enter two city names to calculate the time difference</p>
+</header>
 
-<select id="country1">
-<option value="5.5">India</option>
-<option value="-5">USA (New York)</option>
-<option value="0">UK</option>
-<option value="9">Japan</option>
-<option value="10">Australia</option>
-</select>
+<div class="calculator-container">
+  <div class="calculator-card">
+    <input type="text" id="city1" placeholder="City 1" />
+    <input type="text" id="city2" placeholder="City 2" />
+    <button onclick="calculateTimeDiff()">Calculate</button>
+    <p id="timeresult"></p>
+  </div>
+</div>
 
-<select id="country2">
-<option value="5.5">India</option>
-<option value="-5">USA (New York)</option>
-<option value="0">UK</option>
-<option value="9">Japan</option>
-<option value="10">Australia</option>
-</select>
-
-<button onclick="calculateTimeDifference()">Calculate</button>
-
-<p id="timeresult"></p>
-
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+<a class="back-home" href="index.html">← Back to Home</a>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

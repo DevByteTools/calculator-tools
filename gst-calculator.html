@@ -2,30 +2,30 @@
 <html>
 
 <head>
-<title>GST Calculator</title>
-<link rel="stylesheet" href="style.css">
+  <title>GST Calculator | DevByte Tools</title>
+  <meta name="description" content="Compute GST and total price instantly.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>GST Calculator</h1>
+<header>
+  <h1>GST Calculator</h1>
+  <p>Enter amount and GST rate to calculate total price</p>
+</header>
 
-<input type="number" id="amount" placeholder="Enter amount">
-<br><br>
+<div class="calculator-container">
+  <div class="calculator-card">
+    <input type="number" id="amount" placeholder="Amount" />
+    <input type="number" id="gstrate" placeholder="GST %" />
+    <button onclick="calculateGST()">Calculate</button>
+    <p id="gstresult"></p>
+  </div>
+</div>
 
-<input type="number" id="gstrate" placeholder="GST %">
-<br><br>
-
-<button onclick="calculateGST()">Calculate</button>
-
-<p id="gstresult"></p>
-
-<a href="index.html">
-<button>Back to Home</button>
-</a>
+<a class="back-home" href="index.html">← Back to Home</a>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
