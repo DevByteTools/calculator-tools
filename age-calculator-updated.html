@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Age Calculator | DevByte Tools</title>
+  <meta name="description" content="Calculate your exact age in years, months, days instantly.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Age Calculator</h1>
+    <p>Enter birth date to see your exact age</p>
+  </header>
+
+  <div class="calculator-container">
+    <div class="calculator-card">
+      <div class="input-group">
+        <label for="birthdate">Birth Date</label>
+        <input type="date" id="birthdate" max="">
+      </div>
+      <button onclick="calculateAge()">Calculate Age</button>
+      <div class="preview" id="preview">
+        <h4>Preview</h4>
+        <p>Age: <span id="preview-age">0</span> years</p>
+      </div>
+      <div class="results" id="results">
+        <h3>Final Age</h3>
+        <p>Years: <span id="age-result">0</span></p>
+        <p>Months: <span id="months-result">0</span></p>
+        <p>Days: <span id="days-result">0</span></p>
+      </div>
+    </div>
+  </div>
+
+  <a class="back-home" href="index.html">← Back to Home</a>
+
+  <div class="more-tools">
+    <h3>Other Tools</h3>
+    <div class="tools-grid">
+      <a href="percentage-calculator.html" class="tool-card">
+        <h4>Percentage</h4>
+        <p>Quick calc</p>
+      </a>
+      <a href="emi-calculator.html" class="tool-card">
+        <h4>EMI</h4>
+        <p>Loan payments</p>
+      </a>
+      <a href="bmi-calculator.html" class="tool-card">
+        <h4>BMI</h4>
+        <p>Health index</p>
+      </a>
+      <a href="gst-calculator.html" class="tool-card">
+        <h4>GST</h4>
+        <p>GST amount</p>
+      </a>
+      <a href="interest-calculator.html" class="tool-card">
+        <h4>Interest</h4>
+        <p>Simple interest</p>
+      </a>
+      <a href="discount-calculator.html" class="tool-card">
+        <h4>Discount</h4>
+        <p>Final price</p>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function realTimeAge() {
+      const birthdate = document.getElementById('birthdate').value;
+      if (!birthdate) return;
+      
+      const birth = new Date(birthdate);
+      const today = new Date();
+      let age = today.getFullYear() - birth.getFullYear();
+      const m = today.getMonth() - birth.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) age--;
+      
+      document.getElementById('preview-age').textContent = age;
+    }
+
+    function calculateAge() {
+      const birthdate = document.getElementById('birthdate').value;
+      if (!birthdate) {
+        alert('Please select birth date');
+        return;
+      }
+
+      const birth = new Date(birthdate);
+      const today = new Date();
+      
+      let years = today.getFullYear() - birth.getFullYear();
+      let months = today.getMonth() - birth.getMonth();
+      if (months < 0) { years--; months += 12; }
+      if (today.getDate() < birth.getDate()) { months--; }
+      
+      const daysDiff = (today - birth) / (1000 * 60 * 60 * 24);
+      const days = Math.floor(daysDiff);
+      
+      document.getElementById('age-result').textContent = years;
+      document.getElementById('months-result').textContent = months;
+      document.getElementById('days-result').textContent = days;
+      
+      document.getElementById('results').style.display = 'block';
+      document.getElementById('preview').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.getElementById('birthdate').addEventListener('change', realTimeAge);
+  </script>
+</body>
+</html>
